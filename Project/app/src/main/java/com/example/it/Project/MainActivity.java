@@ -8,15 +8,19 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.it.Project.adapter.CustomLinearLayout;
 import com.example.it.Project.adapter.MyRecycleAdapter;
+import com.example.it.Project.adapter.MyRecycleChau;
 import com.example.it.Project.data_models.CardViewModel;
+import com.example.it.Project.data_models.CardViewModelchau;
 import com.example.it.hdt.R;
 
 import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
     private Vector<CardViewModel> data= new Vector<>();
+    private Vector<CardViewModelchau> chau= new Vector<>();
+
     RecyclerView recyclerView;
-    RecyclerView recyclerView1;
+    RecyclerView recyclerViewchau;
     private int position;
 
 
@@ -40,18 +44,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // banner
         data.add(new CardViewModel("Pet",R.drawable.huyen));
         data.add(new CardViewModel("Pizza 1",R.drawable.pizza1));
         data.add(new CardViewModel("..........",R.drawable.images));
         data.add(new CardViewModel("Pizza 2",R.drawable.pizza2));
 
+        //sp chau
+        chau.add(new CardViewModelchau("as","123",R.drawable.chausu));
+        chau.add(new CardViewModelchau("as","123",R.drawable.pizza2));
+        chau.add(new CardViewModelchau("as","123",R.drawable.huyen));
+        chau.add(new CardViewModelchau("as","123",R.drawable.pizza1));
 
-        // san pham 1;
-        data.add(new CardViewModel("a",R.drawable.chausu));
 
-        recyclerView1 =(RecyclerView) findViewById(R.id.chaukieng) ;
 
         recyclerView=(RecyclerView) findViewById(R.id.recycler);
+
+        recyclerViewchau=(RecyclerView) findViewById(R.id.recycle);
 
 
 
@@ -61,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
         MyRecycleAdapter adapte= new MyRecycleAdapter(data);
         recyclerView.setAdapter(adapte);
         scrollByTime();
+
+
+        CustomLinearLayout customLinearLayoutchau= new CustomLinearLayout(this);
+        customLinearLayoutchau.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerViewchau.setLayoutManager(customLinearLayoutchau);
+        MyRecycleChau adapterchau= new MyRecycleChau(chau);
+        recyclerViewchau.setAdapter(adapterchau);
 
     }
 }

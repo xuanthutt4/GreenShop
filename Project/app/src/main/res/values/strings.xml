@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">HDT</string>
     <string name="search_hint">Nhập tên sản phẩm .....</string>
+    <string name="Chau">Chậu Kiểng</string>
+    <string name="Cayban">Cây để bàn</string>
+    <string name="Caytrongnuoc">Cây trong nước</string>
+    <string name="Caycongtr">Cây công trình</string>
+    <string name="Xemtatca"> Xem tất cả >>  </string>
+    <string name="XemThem"> Xem thêm </string>
 </resources>

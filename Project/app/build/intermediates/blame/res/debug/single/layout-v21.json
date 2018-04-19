@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\didong\\DI DOng\\HDT\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\DELL\\.android\\build-cache\\9c21de894608d1325208754b8a11b4497994f200\\output\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "C:\\Users\\DELL\\Desktop\\didong\\DI DOng\\HDT\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\DELL\\.android\\build-cache\\9c21de894608d1325208754b8a11b4497994f200\\output\\res\\layout-v21\\notification_template_icon_group.xml"
-    },
-    {
-        "merged": "C:\\Users\\DELL\\Desktop\\didong\\DI DOng\\HDT\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
         "source": "C:\\Users\\DELL\\.android\\build-cache\\9c21de894608d1325208754b8a11b4497994f200\\output\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "C:\\Users\\DELL\\Desktop\\didong\\DI DOng\\HDT\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\9c21de894608d1325208754b8a11b4497994f200\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
         "source": "C:\\Users\\DELL\\.android\\build-cache\\9c21de894608d1325208754b8a11b4497994f200\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\DELL\\.android\\build-cache\\9c21de894608d1325208754b8a11b4497994f200\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     }
 ]
