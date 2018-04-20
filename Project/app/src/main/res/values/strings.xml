@@ -7,4 +7,40 @@
     <string name="Caycongtr">Cây công trình</string>
     <string name="Xemtatca"> Xem tất cả >>  </string>
     <string name="XemThem"> Xem thêm </string>
+
+
+
+
+    <!---->
+    <string-array name="Product_name">
+        <item>chau a</item>
+        <item>chau aw</item>
+        <item>chau ad</item>
+        <item>chau ads</item>
+        <item>chau b</item>
+    </string-array>
+
+    <string-array name="Product_picts">
+        <item>@drawable/chausu</item>
+        <item>@drawable/huyen</item>
+        <item>@drawable/pizza1</item>
+        <item>@drawable/chausu</item>
+        <item>@drawable/images</item>
+    </string-array>
+    <string-array name="statuus">
+        <item>van con </item>
+        <item>hết</item>
+        <item>Còn</item>
+        <item>Còn</item>
+        <item>chau b</item>
+    </string-array>
+    <string-array name="contact">
+        <item>hihi</item>
+        <item>haha</item>
+        <item>hihi</item>
+        <item>hihi</item>
+        <item>haha</item>
+    </string-array>
+
+
 </resources>
