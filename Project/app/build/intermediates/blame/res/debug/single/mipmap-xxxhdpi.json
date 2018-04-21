@@ -4,12 +4,28 @@
         "source": "C:\\Users\\DELL\\Desktop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_menu.png"
     },
     {
+        "merged": "D:\\GreenShop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "D:\\GreenShop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\GreenShop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "D:\\GreenShop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
         "source": "C:\\Users\\DELL\\Desktop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\GreenShop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_cart.png",
+        "source": "D:\\GreenShop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_cart.png"
+    },
+    {
         "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_cart.png",
         "source": "C:\\Users\\DELL\\Desktop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_cart.png"
+    },
+    {
+        "merged": "D:\\GreenShop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_menu.png",
+        "source": "D:\\GreenShop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_menu.png"
     },
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_logotoo.png",
@@ -18,5 +34,9 @@
     {
         "merged": "C:\\Users\\DELL\\Desktop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\DELL\\Desktop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\GreenShop\\Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_logotoo.png",
+        "source": "D:\\GreenShop\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_logotoo.png"
     }
 ]

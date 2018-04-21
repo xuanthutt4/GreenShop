@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.it.Project.data_models.CardViewModel;
 import com.example.it.Project.data_models.CardViewModelchau;
 import com.example.it.hdt.R;
 
@@ -34,9 +33,9 @@ public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHol
 
         public myViewHolder(View itemView) {
             super(itemView);
-            textView= (TextView) itemView.findViewById(R.id.carTextViewchau);
-            imageView=(ImageView) itemView.findViewById(R.id.imageViewchau);
-            gia= (TextView) itemView.findViewById(R.id.gia);
+            textView = (TextView) itemView.findViewById(R.id.carTextViewchau);
+            imageView =(ImageView) itemView.findViewById(R.id.imageViewchau);
+            gia = (TextView) itemView.findViewById(R.id.gia);
         }
     }
 

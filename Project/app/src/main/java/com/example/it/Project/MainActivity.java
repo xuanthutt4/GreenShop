@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.it.Project.adapter.CustomLinearLayout;
 import com.example.it.Project.adapter.MyRecycleAdapter;
+import com.example.it.Project.adapter.MyRecycleCategory;
 import com.example.it.Project.adapter.MyRecycleChau;
 import com.example.it.Project.data_models.CardViewModel;
 import com.example.it.Project.data_models.CardViewModelchau;
@@ -16,13 +17,12 @@ import com.example.it.hdt.R;
 import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
-    private Vector<CardViewModel> data= new Vector<>();
-    private Vector<CardViewModelchau> chau= new Vector<>();
+    private Vector<CardViewModel> data = new Vector<>();
+    private Vector<CardViewModelchau> chau = new Vector<>(), dataItem = new Vector<>();
 
     RecyclerView recyclerView;
-    RecyclerView recyclerViewchau;
-    private int position;
-
+    RecyclerView recyclerViewchau, recycleCategory;
+    private int position = 0;
 
     private void scrollByTime(){
         final Handler handler= new Handler();
@@ -51,18 +51,19 @@ public class MainActivity extends AppCompatActivity {
         data.add(new CardViewModel("Pizza 2",R.drawable.pizza2));
 
         //sp chau
-        chau.add(new CardViewModelchau("as","123",R.drawable.chausu));
-        chau.add(new CardViewModelchau("as","123",R.drawable.pizza2));
-        chau.add(new CardViewModelchau("as","123",R.drawable.huyen));
-        chau.add(new CardViewModelchau("as","123",R.drawable.pizza1));
+        chau.add(new CardViewModelchau("eas", 123, R.drawable.chausu, 1));
+        chau.add(new CardViewModelchau("eas", 123, R.drawable.pizza2, 1));
+        chau.add(new CardViewModelchau("edas", 123, R.drawable.huyen, 1));
+        chau.add(new CardViewModelchau("eads", 123, R.drawable.pizza1, 1));
+        chau.add(new CardViewModelchau("asbd", 123, R.drawable.chausu, 2));
+        chau.add(new CardViewModelchau("asv", 123, R.drawable.pizza2, 2));
+        chau.add(new CardViewModelchau("ads", 123, R.drawable.huyen, 2));
+        chau.add(new CardViewModelchau("asg", 123, R.drawable.pizza1, 2));
 
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
 
-
-        recyclerView=(RecyclerView) findViewById(R.id.recycler);
-
-        recyclerViewchau=(RecyclerView) findViewById(R.id.recycle);
-
-
+        recyclerViewchau = (RecyclerView) findViewById(R.id.recycleChau);
+        recycleCategory = (RecyclerView) findViewById(R.id.recycle_category);
 
         CustomLinearLayout customLinearLayout= new CustomLinearLayout(this);
         customLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -78,5 +79,19 @@ public class MainActivity extends AppCompatActivity {
         MyRecycleChau adapterchau= new MyRecycleChau(chau);
         recyclerViewchau.setAdapter(adapterchau);
 
+        dataItem.add(new CardViewModelchau("Cây 1", 20000, R.drawable.lvn1521459111, 1));
+        dataItem.add(new CardViewModelchau("Cây 2", 20000, R.drawable.cay_canh, 1));
+        dataItem.add(new CardViewModelchau("Cây 3", 20000, R.drawable.lvn1521459111, 1));
+        dataItem.add(new CardViewModelchau("Cây 4", 20000, R.drawable.cay_canh, 1));
+        dataItem.add(new CardViewModelchau("Cây 5", 20000, R.drawable.lvn1521459111, 2));
+        dataItem.add(new CardViewModelchau("Cây 6", 20000, R.drawable.cay_canh, 2));
+        dataItem.add(new CardViewModelchau("Cây 7", 20000, R.drawable.lvn1521459111, 2));
+        dataItem.add(new CardViewModelchau("Cây 8", 20000, R.drawable.cay_canh, 2));
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        recycleCategory.setLayoutManager(manager);
+        MyRecycleCategory myRecycleCategory = new MyRecycleCategory(this, dataItem, 2);
+        recycleCategory.setAdapter(myRecycleCategory);
     }
 }

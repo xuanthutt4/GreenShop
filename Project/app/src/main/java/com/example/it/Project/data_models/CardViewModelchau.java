@@ -6,13 +6,16 @@ package com.example.it.Project.data_models;
 
 public class CardViewModelchau {
     private String cardName;
-    private String gia;
-    private int image;
+    private int image, type, gia;
 
-    public CardViewModelchau(String cardName, String gia, int image) {
+    public CardViewModelchau() {
+    }
+
+    public CardViewModelchau(String cardName, int gia, int image, int type) {
         this.cardName = cardName;
         this.gia = gia;
         this.image = image;
+        this.type = type;
     }
 
     public String getCardName() {
@@ -23,11 +26,11 @@ public class CardViewModelchau {
         this.cardName = cardName;
     }
 
-    public String getGia() {
+    public int getGia() {
         return gia;
     }
 
-    public void setGia(String gia) {
+    public void setGia(int gia) {
         this.gia = gia;
     }
 
@@ -37,5 +40,13 @@ public class CardViewModelchau {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }
