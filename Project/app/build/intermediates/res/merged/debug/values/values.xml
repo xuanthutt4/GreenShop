@@ -21,6 +21,10 @@
         <item>hihi</item>
         <item>haha</item>
     </string-array>
+    <string-array name="menu">
+        <item>Trang chủ</item>
+        <item>Xem lịch sử</item>
+    </string-array>
     <string-array name="statuus">
         <item>van con </item>
         <item>hết</item>
@@ -496,7 +500,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">HDT</string>
+    <string name="app_name">Green Shop</string>
     <string name="donVi"> vnđ/cây</string>
     <string name="search_hint">Nhập tên sản phẩm .....</string>
     <string name="search_menu_title">Search</string>
@@ -510,6 +514,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/myActionBar</item>
+        <item name="drawerArrowStyle">@style/myDrawerArrowToggle</item>
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1906,4 +1912,23 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <style name="myActionBar" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/myTitleBar</item>
+        <item name="titleTextStyle">@style/myTitleBar</item>
+        <item name="android:background">@color/colorBlue</item>
+        <item name="background">@color/colorBlue</item>
+        <item name="height">70dp</item>
+        <item name="android:height">70dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="myDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+    <style name="myTitleBar" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
 </resources>

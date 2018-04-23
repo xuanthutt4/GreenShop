@@ -1,10 +1,22 @@
 package com.example.it.Project;
 
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 
 import com.example.it.Project.adapter.CustomLinearLayout;
 import com.example.it.Project.adapter.MyRecycleAdapter;
@@ -16,13 +28,18 @@ import com.example.it.hdt.R;
 
 import java.util.Vector;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
     private Vector<CardViewModel> data = new Vector<>();
     private Vector<CardViewModelchau> chau = new Vector<>(), dataItem = new Vector<>();
 
-    RecyclerView recyclerView;
-    RecyclerView recyclerViewchau, recycleCategory;
+    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewchau, recycleCategory;
     private int position = 0;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private ArrayAdapter<String> adapter;
+    private String[] mdata;
+    private SearchView searchView;
 
     private void scrollByTime(){
         final Handler handler= new Handler();
@@ -42,7 +59,38 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.drawer_menu);
+        Toolbar toolbar ;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        FrameLayout container = (FrameLayout) findViewById(R.id.content_frame);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerMenu);//Lấy layout của Activity
+        ListView drawer = (ListView) findViewById(R.id.drawer);//Lấy ListView
+        mdata = getResources().getStringArray(R.array.menu);//Lấy mảng
+        getLayoutInflater().inflate(R.layout.activity_main, container);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mdata);
+        drawer.setAdapter(adapter); // Thiết lập nội dung của ListView
+
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.app_name, R.string.app_name) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                invalidateOptionsMenu();
+            }
+        };
+        drawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.addDrawerListener(drawerToggle);
 
         // banner
         data.add(new CardViewModel("Pet",R.drawable.huyen));
@@ -93,5 +141,46 @@ public class MainActivity extends AppCompatActivity {
         recycleCategory.setLayoutManager(manager);
         MyRecycleCategory myRecycleCategory = new MyRecycleCategory(this, dataItem, 2);
         recycleCategory.setAdapter(myRecycleCategory);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        /*getMenuInflater().inflate(R.menu.search_view, menu);
+        MenuItem itemSearch = menu.findItem(R.id.searchView);
+        searchView = (SearchView) itemSearch.getActionView();
+        //set OnQueryTextListener cho search view để thực hiện search theo text
+        //  searchView.setOnQueryTextListener(this);*/
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_view, menu);
+
+        MenuItem searchMenuItem = menu.findItem(R.id.searchView);
+        searchView = (SearchView) searchMenuItem.getActionView();
+
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (drawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return true;
     }
 }

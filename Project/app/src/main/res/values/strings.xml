@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HDT</string>
+    <string name="app_name">Green Shop</string>
     <string name="search_hint">Nhập tên sản phẩm .....</string>
     <string name="Chau">Chậu Kiểng</string>
     <string name="Cayban">Cây để bàn</string>
@@ -9,8 +9,6 @@
     <string name="XemThem"> Xem thêm </string>
     <string name="donVi"> vnđ/cây</string>
 
-
-
     <!---->
     <string-array name="Product_name">
         <item>chau a</item>
@@ -19,7 +17,10 @@
         <item>chau ads</item>
         <item>chau b</item>
     </string-array>
-
+    <string-array name="menu">
+        <item>Trang chủ</item>
+        <item>Xem lịch sử</item>
+    </string-array>
     <string-array name="Product_picts">
         <item>@drawable/chausu</item>
         <item>@drawable/huyen</item>
@@ -41,6 +42,4 @@
         <item>hihi</item>
         <item>haha</item>
     </string-array>
-
-
 </resources>

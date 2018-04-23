@@ -3,30 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\dell\.android\build-cache\9f770b479fe317d94e9cd932331128e8c81903bc\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="D:\GreenShop\Project\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_90c184ad7ce508c3291d327b9424b64c2d5f456f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\GreenShop\Project\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="057c12cdc4acd867d4cb0db3d7ade342364d0b88">
+        sha1="83f7d2b0a32d326ac6c194399d4c5cf530d0fe2f">
         <dex dex="D:\GreenShop\Project\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_03eb94b29fd14f26b9dae0fa9f09355421ca2398\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dell\.android\build-cache\7de06c3fdfb01f635b8b7dbb24d004c0252aef31\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
-        <dex dex="D:\GreenShop\Project\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5a36bff27e9f4118cd1507b759fc23dbe5dfe34b\classes.dex" />
     </item>
     <item
         is-multidex="true"
