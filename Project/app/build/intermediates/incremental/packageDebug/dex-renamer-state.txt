@@ -1,7 +1,0 @@
-#Sun Apr 22 22:57:17 ICT 2018
-base.0=D\:\\GreenShop\\Project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_fdd0855312b5b25ccf7ba548c6ff9a783fd51f95
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=D\:\\GreenShop\\Project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_03eb94b29fd14f26b9dae0fa9f09355421ca2398\\classes.dex
-base.1=D\:\\GreenShop\\Project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_03eb94b29fd14f26b9dae0fa9f09355421ca2398
-file.0=D\:\\GreenShop\\Project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_fdd0855312b5b25ccf7ba548c6ff9a783fd51f95\\classes.dex

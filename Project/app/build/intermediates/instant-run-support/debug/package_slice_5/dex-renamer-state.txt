@@ -1,4 +1,0 @@
-#Sun Apr 22 22:54:42 ICT 2018
-base.0=D\:\\GreenShop\\Project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_5
-renamed.0=classes.dex
-file.0=D\:\\GreenShop\\Project\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_5\\classes.dex
