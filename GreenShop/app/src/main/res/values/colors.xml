@@ -8,5 +8,11 @@
     <color name="colorWhite">#ffff</color>
     <color name="colorRed">#cc1818</color>
     <color name="colorBlack">#000</color>
+	<color name="colorBlue">#1ba8ff</color>
+    <color name="nau">#1111</color>
+    <color name="red">#ff041d</color>
+    <color name="xam">#1111</color>
+    <color name="black">#212121</color>
+    <color name="blackgr">#cac9c9</color>
 
 </resources>

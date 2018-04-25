@@ -20,7 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/dribbble7" />
+            android:src="@drawable/dribbble7" >
+
+        </ImageView>
 
         <ImageView
             android:id="@+id/detail_product_button_cart"
@@ -49,7 +51,7 @@
             android:src="@drawable/ic_back"
             android:tint="@color/colorWhite" />
 
-        />
+
 
     </FrameLayout>
 

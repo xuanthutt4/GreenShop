@@ -1,19 +1,56 @@
 package com.greenshop.greenshop.ViewControllers;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
+import com.greenshop.greenshop.DataController.CustomLinearLayout;
+import com.greenshop.greenshop.DataController.DataController;
+import com.greenshop.greenshop.DataController.MyRecycleAdapter;
+import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
+
+import java.util.ArrayList;
+import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ArrayList<Product> data = new ArrayList<>();
+    private Vector<Product> chau = new Vector<>(), dataItem = new Vector<>();
+    private DataController controller = new DataController();
+    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewchau, recycleCategory;
+    private int position = 0;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private ArrayAdapter<String> adapter;
+    private String[] mdata;
+
+    private void scrollByTime(){
+        final Handler handler= new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                position++;
+                if (position >=data.size()){
+                    position=0;
+                }
+                recyclerView.smoothScrollToPosition(position);
+                handler.postDelayed(this,3000);
+
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +69,20 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //banner
+        data = controller.getAllProducts();
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+
+        recyclerViewchau = (RecyclerView) findViewById(R.id.recycleChau);
+        recycleCategory = (RecyclerView) findViewById(R.id.recycle_category);
+
+        CustomLinearLayout customLinearLayout= new CustomLinearLayout(this);
+        customLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(customLinearLayout);
+        MyRecycleAdapter adapte= new MyRecycleAdapter(data);
+        recyclerView.setAdapter(adapte);
+        scrollByTime();
     }
 
     @Override
