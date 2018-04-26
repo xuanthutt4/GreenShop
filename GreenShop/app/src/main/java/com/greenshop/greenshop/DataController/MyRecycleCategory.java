@@ -12,9 +12,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.greenshop.greenshop.Models.Category;
 import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
-import com.greenshop.greenshop.ViewControllers.SplashActivity;
+import com.greenshop.greenshop.ViewControllers.ProductByCategoryActivity;
 
 import java.util.ArrayList;
 
@@ -24,16 +25,17 @@ import java.util.ArrayList;
 
 public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.myViewHolder> {
     private ArrayList<Product> data;
-    private int idCategory;
+    private ArrayList<Category> categories;
     private MySubCategory mySubCategoryLeft, mySubCategoryRight;
     private AppCompatActivity context = null;
     private Intent intent;
+    private String nameCat = "";
 
-    public MyRecycleCategory(AppCompatActivity context, ArrayList<Product> data, int idCategory){
+    public MyRecycleCategory(AppCompatActivity context, ArrayList<Product> data, ArrayList<Category> categories){
         this.data = data;
-        this.idCategory = idCategory;
+        this.categories = categories;
         this.context = context;
-        intent = new Intent(context, SplashActivity.class);
+        intent = new Intent(context, ProductByCategoryActivity.class);
     }
     public static class myViewHolder extends RecyclerView.ViewHolder {
         private TextView textView;
@@ -59,10 +61,15 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
 
     @Override
     public void onBindViewHolder(MyRecycleCategory.myViewHolder holder, final int position) {
-        ArrayList<Product> dataType = new ArrayList<>();
+        final ArrayList<Product> dataType = new ArrayList<>();
         for (Product modelchau : data) {
             if (modelchau.getIdCategory() == position + 1) {
-                holder.textView.setText(String.valueOf(modelchau.getIdCategory()));
+                for (Category category:categories) {
+                    if (modelchau.getIdCategory() == category.getId())
+                        nameCat = category.getName();
+                        holder.textView.setText(nameCat);
+                }
+
                 dataType.add(modelchau);
             }
             if (dataType.size() == 4)
@@ -77,9 +84,9 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("data", data);
+                bundle.putSerializable("data", dataType);
+                bundle.putString("nameCat", nameCat);
                 intent.putExtra("bundle", bundle);
-                intent.putExtra("type", position + 1);
                 context.startActivity(intent);
             }
         });
@@ -87,6 +94,6 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
 
     @Override
     public int getItemCount() {
-        return idCategory;
+        return categories.size();
     }
 }

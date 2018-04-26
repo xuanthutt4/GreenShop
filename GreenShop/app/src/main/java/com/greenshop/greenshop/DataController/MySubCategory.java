@@ -70,7 +70,8 @@ public class MySubCategory extends ArrayAdapter<Product>{
 
         viewHolder.name.setText(product.getName());
         viewHolder.price.setText(String.valueOf(product.getPrice()));
-        Drawable drawable = viewHolder.img.getResources().getDrawable(R.drawable.ic_launcher_background);
+        int img = context.getResources().getIdentifier(product.getImages()[0], "drawable", context.getPackageName());
+        Drawable drawable = viewHolder.img.getResources().getDrawable(img);
         viewHolder.img.setImageDrawable(drawable);
 
         return convertView;

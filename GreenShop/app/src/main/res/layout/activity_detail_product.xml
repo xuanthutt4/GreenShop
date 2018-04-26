@@ -20,9 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/dribbble7" >
-
-        </ImageView>
+            android:src="@drawable/dribbble7"
+            android:contentDescription="@string/app_name"/>
 
         <ImageView
             android:id="@+id/detail_product_button_cart"

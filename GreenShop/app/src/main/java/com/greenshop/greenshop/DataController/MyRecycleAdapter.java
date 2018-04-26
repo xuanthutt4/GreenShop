@@ -1,5 +1,7 @@
 package com.greenshop.greenshop.DataController;
 
+import android.graphics.drawable.Drawable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,9 +21,10 @@ import java.util.ArrayList;
 
 public class MyRecycleAdapter extends RecyclerView.Adapter <MyRecycleAdapter.myViewHolder>{
     private ArrayList<Product> data;
-
-    public MyRecycleAdapter(ArrayList<Product> data){
+    private AppCompatActivity c;
+    public MyRecycleAdapter(ArrayList<Product> data, AppCompatActivity c){
         this.data = data;
+        this.c = c;
     }
 
 
@@ -47,10 +50,10 @@ public class MyRecycleAdapter extends RecyclerView.Adapter <MyRecycleAdapter.myV
     public void onBindViewHolder(MyRecycleAdapter.myViewHolder holder, int position) {
         Product aCard= data.get(position);
 
-
-        //Drawable drawable=holder.imageView.getResources().getDrawable(aCard.getImages());
+        int img = c.getResources().getIdentifier(aCard.getImages()[0], "drawable", c.getPackageName());
+        Drawable drawable = holder.imageView.getResources().getDrawable(img);
         holder.textView.setText(aCard.getName());
-        //holder.imageView.setImageDrawable(drawable);
+        holder.imageView.setImageDrawable(drawable);
     }
 
     @Override

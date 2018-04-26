@@ -9,18 +9,27 @@ public class DataController {
 
     public ArrayList<Product> getAllProducts() {
         ArrayList<Product> products = new ArrayList<>();
-        /*
-         * - Add product into array
-         */
+        products.add(new Product("1", "Cây 1", "Cây ...", "Cây mang lại lợi ích", 1, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 2", "Cây ...", "Cây mang lại lợi ích", 1, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 3", "Cây ...", "Cây mang lại lợi ích", 1, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 4", "Cây ...", "Cây mang lại lợi ích", 1, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 5", "Cây ...", "Cây mang lại lợi ích", 2, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 6", "Cây ...", "Cây mang lại lợi ích", 2, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 7", "Cây ...", "Cây mang lại lợi ích", 2, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 8", "Cây ...", "Cây mang lại lợi ích", 2, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 9", "Cây ...", "Cây mang lại lợi ích", 3, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 10", "Cây ...", "Cây mang lại lợi ích", 3, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 11", "Cây ...", "Cây mang lại lợi ích", 3, 100000, 110000, new String[] {"cay_canh"}));
+        products.add(new Product("1", "Cây 12", "Cây ...", "Cây mang lại lợi ích", 3, 100000, 110000, new String[] {"cay_canh"}));
 
         return products;
     }
 
     public ArrayList<Category> getAllCategory() {
         ArrayList<Category> categories = new ArrayList<>();
-        /*
-         * - Add product into array
-         */
+        categories.add(new Category(1, "Cây cảnh"));
+        categories.add(new Category(2, "Cây phong thủy"));
+        categories.add(new Category(3, "Cây trong nhà"));
 
         return categories;
     }

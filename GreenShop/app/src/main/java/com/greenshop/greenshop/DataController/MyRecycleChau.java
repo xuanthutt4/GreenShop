@@ -1,6 +1,7 @@
 package com.greenshop.greenshop.DataController;
 
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,19 +13,24 @@ import android.widget.TextView;
 import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  * Created by IT on 3/19/2018.
  */
 
 public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHolder>{
-    private Vector<Product> data;
+    private ArrayList<Product> data;
+    private AppCompatActivity context;
 
-    public MyRecycleChau(Vector<Product> data){
+    public MyRecycleChau(ArrayList<Product> data){
         this.data = data;
     }
 
+    public MyRecycleChau(ArrayList<Product> data, AppCompatActivity context) {
+        this.data = data;
+        this.context = context;
+    }
 
     public static class myViewHolder extends RecyclerView.ViewHolder {
         private TextView textView;
@@ -50,11 +56,11 @@ public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHol
     @Override
     public void onBindViewHolder(MyRecycleChau.myViewHolder holder, int position) {
         Product aCard= data.get(position);
-
-
-        Drawable drawable=holder.imageView.getResources().getDrawable(R.drawable.ic_launcher_background);
+        int img = context.getResources().getIdentifier(aCard.getImages()[0], "drawable", context.getPackageName());
+        Drawable drawable= holder.imageView.getResources().getDrawable(img);
         holder.textView.setText(aCard.getName());
         holder.imageView.setImageDrawable(drawable);
+        holder.gia.setText(String.valueOf(aCard.getPrice()));
     }
 
     @Override

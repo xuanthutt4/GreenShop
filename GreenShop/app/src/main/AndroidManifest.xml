@@ -25,6 +25,9 @@
         <activity android:name=".ViewControllers.DetailProductActivity">
 
         </activity>
+        <activity android:name=".ViewControllers.ProductByCategoryActivity">
+
+        </activity>
     </application>
 
 </manifest>

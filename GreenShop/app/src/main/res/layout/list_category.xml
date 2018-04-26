@@ -67,7 +67,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:padding="3dp"
-                android:text=""
+                android:text="@string/btnXemThem"
                 android:textColor="@color/red"
                 android:textStyle="bold" />
 

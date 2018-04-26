@@ -12,29 +12,25 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 
 import com.greenshop.greenshop.DataController.CustomLinearLayout;
 import com.greenshop.greenshop.DataController.DataController;
 import com.greenshop.greenshop.DataController.MyRecycleAdapter;
+import com.greenshop.greenshop.DataController.MyRecycleCategory;
+import com.greenshop.greenshop.DataController.MyRecycleChau;
+import com.greenshop.greenshop.Models.Category;
 import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<Product> data = new ArrayList<>();
-    private Vector<Product> chau = new Vector<>(), dataItem = new Vector<>();
+    private ArrayList<Category> categories = new ArrayList<>();
     private DataController controller = new DataController();
-    private RecyclerView recyclerView;
-    private RecyclerView recyclerViewchau, recycleCategory;
+    private RecyclerView recyclerView, recyclerViewchau, recycleCategory;
     private int position = 0;
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle drawerToggle;
-    private ArrayAdapter<String> adapter;
-    private String[] mdata;
 
     private void scrollByTime(){
         final Handler handler= new Handler();
@@ -59,6 +55,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //FrameLayout container = (FrameLayout) findViewById(R.id.frame_container);
+        //getLayoutInflater().inflate(R.layout.content_main, container);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -72,6 +70,7 @@ public class MainActivity extends AppCompatActivity
 
         //banner
         data = controller.getAllProducts();
+        categories = controller.getAllCategory();
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
 
         recyclerViewchau = (RecyclerView) findViewById(R.id.recycleChau);
@@ -80,9 +79,26 @@ public class MainActivity extends AppCompatActivity
         CustomLinearLayout customLinearLayout= new CustomLinearLayout(this);
         customLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(customLinearLayout);
-        MyRecycleAdapter adapte= new MyRecycleAdapter(data);
+        MyRecycleAdapter adapte= new MyRecycleAdapter(data, this);
         recyclerView.setAdapter(adapte);
         scrollByTime();
+
+        CustomLinearLayout customLinearLayoutchau= new CustomLinearLayout(this);
+        customLinearLayoutchau.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerViewchau.setLayoutManager(customLinearLayoutchau);
+        MyRecycleChau adapterchau= new MyRecycleChau(data, this);
+        recyclerViewchau.setAdapter(adapterchau);
+
+        LinearLayoutManager manager = new LinearLayoutManager(this) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        recycleCategory.setLayoutManager(manager);
+        MyRecycleCategory myRecycleCategory = new MyRecycleCategory(this, data, categories);
+        recycleCategory.setAdapter(myRecycleCategory);
     }
 
     @Override
