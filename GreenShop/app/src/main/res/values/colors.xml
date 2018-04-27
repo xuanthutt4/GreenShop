@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#D3E2B6</color>
-    <color name="colorPrimaryDark">#C3DBB4</color>
-    <color name="colorAccent">#AACCB1</color>
-    <color name="colorComeTestTheWater">#87BDB1</color>
-    <color name="colorGoWadingWithMe">#68B3AF</color>
+    <color name="colorPrimary">#363636</color>
+    <color name="colorPrimaryDark">#474747</color>
+    <color name="colorAccent">#E8175D</color>
+    <color name="colorComeTestTheWater">#CC527A</color>
+    <color name="colorGoWadingWithMe">#A8A7A7</color>
     <color name="colorWhite">#ffff</color>
     <color name="colorRed">#cc1818</color>
     <color name="colorBlack">#000</color>
-
+    <color name="colorTransparentWhite">#cccccc</color>
+    <color name="colorText">#ABA9B2</color>
 </resources>

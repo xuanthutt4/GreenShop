@@ -21,6 +21,10 @@ public class DetailProductActivity extends AppCompatActivity {
     private TextView txtPriceBottom, txtOldPrice, txtCurrentPrice, txtName, txtDescription,
             txtDescriptionBenefits;
 
+    public DetailProductActivity(Product product) {
+        this.product = product;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
