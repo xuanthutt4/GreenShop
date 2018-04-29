@@ -19,15 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewControllers.SplashActivity">
-
-        </activity>
-        <activity android:name=".ViewControllers.DetailProductActivity">
-
-        </activity>
-        <activity android:name=".ViewControllers.ProductByCategoryActivity">
-
-        </activity>
+        <activity android:name=".ViewControllers.SplashActivity"></activity>
+        <activity android:name=".ViewControllers.DetailProductActivity"></activity>
+        <activity android:name=".ViewControllers.ProductByCategoryActivity"></activity>
+        <activity android:name=".ViewControllers.ListCategoryActivity"></activity>
     </application>
 
 </manifest>

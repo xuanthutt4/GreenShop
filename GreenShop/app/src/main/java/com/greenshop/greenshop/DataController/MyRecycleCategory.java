@@ -29,7 +29,6 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
     private MySubCategory mySubCategoryLeft, mySubCategoryRight;
     private AppCompatActivity context = null;
     private Intent intent;
-    private String nameCat = "";
 
     public MyRecycleCategory(AppCompatActivity context, ArrayList<Product> data, ArrayList<Category> categories){
         this.data = data;
@@ -62,12 +61,14 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
     @Override
     public void onBindViewHolder(MyRecycleCategory.myViewHolder holder, final int position) {
         final ArrayList<Product> dataType = new ArrayList<>();
+        final String[] catName = new String[1];
+        //Lấy 4 sản phẩm trong cùng 1 loại
         for (Product modelchau : data) {
             if (modelchau.getIdCategory() == position + 1) {
-                for (Category category:categories) {
+                for (Category category:categories) {//Lấy tên loại
                     if (modelchau.getIdCategory() == category.getId())
-                        nameCat = category.getName();
-                        holder.textView.setText(nameCat);
+                        catName[0] = category.getName();
+                        holder.textView.setText(catName[0]);
                 }
 
                 dataType.add(modelchau);
@@ -79,13 +80,14 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
         mySubCategoryRight = new MySubCategory(context, R.layout.sub_list_category, dataType, position+1, 2);
         holder.lstLeft.setAdapter(mySubCategoryLeft);
         holder.lstRight.setAdapter(mySubCategoryRight);
-
+        
         holder.btnXemThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("data", dataType);
-                bundle.putString("nameCat", nameCat);
+                bundle.putSerializable("data", data);
+                bundle.putString("nameCat", catName[0]);
+                bundle.putInt("idCat", position + 1);
                 intent.putExtra("bundle", bundle);
                 context.startActivity(intent);
             }

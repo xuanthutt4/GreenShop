@@ -1,6 +1,8 @@
 package com.greenshop.greenshop.DataController;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 
 import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
+import com.greenshop.greenshop.ViewControllers.DetailProductActivity;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,7 @@ public class MySubCategory extends ArrayAdapter<Product>{
     private AppCompatActivity context = null;
     private ArrayList<Product> myArray = null, data = new ArrayList<>();
     private int idLayout, type, side;
+    private Intent intent;
 
     public MySubCategory(@NonNull AppCompatActivity context, @LayoutRes int resource, ArrayList<Product> myArray, int type, int side) {
         super(context, resource, myArray);
@@ -33,7 +37,7 @@ public class MySubCategory extends ArrayAdapter<Product>{
         this.idLayout = resource;
         this.type = type;
         this.side = side;
-
+        intent = new Intent(context, DetailProductActivity.class);
         if (side == 1) {
             data.add(myArray.get(0));
             data.add(myArray.get(2));
@@ -66,13 +70,23 @@ public class MySubCategory extends ArrayAdapter<Product>{
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        Product product = data.get(position);
+        final Product product = data.get(position);
 
         viewHolder.name.setText(product.getName());
         viewHolder.price.setText(String.valueOf(product.getPrice()));
         int img = context.getResources().getIdentifier(product.getImages()[0], "drawable", context.getPackageName());
         Drawable drawable = viewHolder.img.getResources().getDrawable(img);
         viewHolder.img.setImageDrawable(drawable);
+
+        viewHolder.img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("data", product);
+                intent.putExtra("bundle", bundle);
+                context.startActivity(intent);
+            }
+        });
 
         return convertView;
     }

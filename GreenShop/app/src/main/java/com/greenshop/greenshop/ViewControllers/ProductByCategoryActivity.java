@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +23,7 @@ public class ProductByCategoryActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_by_category);
 
+
         intent = this.getIntent();
 
         TextView lstName = (TextView) findViewById(R.id.lst_name);
@@ -32,14 +32,20 @@ public class ProductByCategoryActivity extends AppCompatActivity{
         if (intent.getBundleExtra("bundle") != null) {
             Bundle bundle = intent.getBundleExtra("bundle");
             String nameCat = (String) bundle.getString("nameCat");
+            int idCat = (int) bundle.getInt("idCat");
             lstName.setText(nameCat);
             products = (ArrayList<Product>) bundle.getSerializable("data");
-            Log.d("testPro", products.toString());
+
+            ArrayList<Product> data = new ArrayList<>();
+            for (Product product:products) {
+                if (product.getIdCategory() == idCat)
+                    data.add(product);
+            }
 
             LinearLayoutManager manager = new LinearLayoutManager(this);
             manager.setOrientation(LinearLayoutManager.VERTICAL);
             lst.setLayoutManager(manager);
-            MyRecycleProByCat adapter = new MyRecycleProByCat(products, this);
+            MyRecycleProByCat adapter = new MyRecycleProByCat(data, this);
             lst.setAdapter(adapter);
         }
         btnReturn.setOnClickListener(new View.OnClickListener() {
@@ -48,5 +54,6 @@ public class ProductByCategoryActivity extends AppCompatActivity{
                 finish();
             }
         });
+
     }
 }
