@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/pro_pic"
-            android:paddingBottom="10dp"
             android:text="txt"
             android:textSize="20sp" />
 
@@ -47,8 +46,6 @@
             android:layout_alignBaseline="@id/pro_name"
             android:layout_alignBottom="@id/pro_name"
             android:layout_alignParentRight="true"
-            android:layout_marginLeft="250dp"
-            android:paddingBottom="10dp"
             android:text="txt"
             android:textSize="20sp" />
 
