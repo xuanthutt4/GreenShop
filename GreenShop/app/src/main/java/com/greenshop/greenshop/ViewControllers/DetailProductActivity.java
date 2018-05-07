@@ -1,6 +1,7 @@
 package com.greenshop.greenshop.ViewControllers;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,16 +21,21 @@ public class DetailProductActivity extends AppCompatActivity {
     private Button btnAddToCart;
     private TextView txtPriceBottom, txtOldPrice, txtCurrentPrice, txtName, txtDescription,
             txtDescriptionBenefits;
+<<<<<<< HEAD
 
     public DetailProductActivity(Product product) {
         this.product = product;
     }
 
+=======
+    private Intent intent;
+>>>>>>> 76220354fc8fa5779763dd1c43d143448edd9a96
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
-
+        intent = getIntent();
+        product = (Product) intent.getBundleExtra("bundle").getSerializable("data");
         try {
             setUpFindView();
             if (product != null)
@@ -102,7 +108,9 @@ public class DetailProductActivity extends AppCompatActivity {
         txtDescriptionBenefits.setText(product.getDescriptionBenefits());
         txtPriceBottom.setText(Float.toString(product.getPrice()));
         txtDescription.setText(product.getDescription());
-
-
+        int img = getResources().getIdentifier(product.getImages()[0], "drawable", getPackageName());
+        Drawable drawable = imgProduct.getResources().getDrawable(img);
+        imgProduct.setImageDrawable(drawable);
+        Log.d("testImg", drawable.toString());
     }
 }

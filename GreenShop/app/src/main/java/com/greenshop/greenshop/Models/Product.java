@@ -1,6 +1,8 @@
 package com.greenshop.greenshop.Models;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable{
     private String id, name, description, descriptionBenefits;
     private int idCategory;
     private float price, oldPrice;
@@ -87,10 +89,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
+        return name;
     }
 }

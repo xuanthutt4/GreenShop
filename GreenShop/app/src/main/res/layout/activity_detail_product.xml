@@ -1,220 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center|top"
-    android:nestedScrollingEnabled="true"
-    android:orientation="vertical"
-    tools:context=".ViewControllers.DetailProductActivity">
-
-    <!--Image, share, add cart, back-->
-    <FrameLayout
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <ImageView
-            android:id="@+id/detail_product_images_product"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/dribbble7" />
-
-        <ImageView
-            android:id="@+id/detail_product_button_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_margin="@dimen/margin_left_detail_product"
-            android:src="@drawable/ic_cart"
-            android:tint="@color/colorWhite" />
-
-        <ImageView
-            android:id="@+id/detail_product_button_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:layout_margin="@dimen/margin_left_detail_product"
-            android:src="@drawable/ic_menu_share"
-            android:tint="@color/colorWhite" />
-
-        <ImageView
-            android:id="@+id/detail_product_button_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_margin="@dimen/margin_left_detail_product"
-            android:src="@drawable/ic_back"
-            android:tint="@color/colorWhite" />
-
-        />
-
-    </FrameLayout>
-
-    <!--Detail of product-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center|top"
+        android:nestedScrollingEnabled="true"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/margin_left_detail_product"
-        android:paddingTop="5dp">
+        tools:context=".ViewControllers.DetailProductActivity">
 
+        <!--Image, share, add cart, back-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:id="@+id/detail_product_text_view_name_product"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="5dp"
-            android:text="CÂY PHONG LAN"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_size_detail_product"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/detail_product_images_product"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/app_name"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:orientation="horizontal">
-
-            <TextView
+            <ImageView
+                android:id="@+id/detail_product_button_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gía:"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/text_size_detail_product"
-                android:textStyle="bold" />
+                android:layout_gravity="right"
+                android:layout_margin="@dimen/margin_left_detail_product"
+                android:tint="@color/colorWhite" />
 
-            <TextView
-                android:id="@+id/detail_product_old_price"
+            <ImageView
+                android:id="@+id/detail_product_button_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:text="500.000" />
+                android:layout_gravity="center|top"
+                android:layout_margin="@dimen/margin_left_detail_product"
+                app:srcCompat="@drawable/ic_menu_share"
+                android:tint="@color/colorWhite" />
 
-
-            <TextView
-                android:id="@+id/detail_product_current_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:text="500.000" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mô tả:"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/text_size_detail_product"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/detail_product_description"
+            <ImageView
+                android:id="@+id/detail_product_button_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:paddingLeft="@dimen/margin_left_detail_product"
-                android:text="- Công dụng 1
-- Mô tả 1
-- Công dụng 2" />
-        </LinearLayout>
+                android:layout_margin="@dimen/margin_left_detail_product"
+                app:srcCompat="@drawable/ic_return"
+                android:tint="@color/colorWhite" />
+        </FrameLayout>
 
-    </LinearLayout>
-
-
-    <!--********-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|top"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/margin_left_detail_product"
-        android:paddingTop="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="5dp"
-            android:text="CÂY PHONG LAN"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_size_detail_product"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/detail_product_description_benefits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="5dp"
-
-            android:text="Đcmm, cả 1 cái bài viết thật dài, dài vl, vl............................................................................................... dài dài daifi.......................................................................................................................................... khiếp, dài vl dài"
-            android:textSize="@dimen/text_size_detail_product" />
-    </LinearLayout>
-
-
-    <!-- Footer add to cart -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_left_detail_product"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/margin_left_detail_product">
-
-        <Button
-            android:id="@+id/detail_product_button_add_to_card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:background="@color/colorRed"
-            android:paddingBottom="10dp"
-            android:paddingLeft="60dp"
-            android:paddingRight="60dp"
-            android:paddingTop="10dp"
-            android:text="ADD TO CART"
-            android:textColor="@color/colorWhite"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
+        <!--Detail of product-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_left_detail_product"
+            android:paddingTop="5dp">
+
 
             <TextView
-                android:id="@+id/detail_product_price_bottom"
+                android:id="@+id/detail_product_text_view_name_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:text="500.000"
-                android:textAlignment="center"
-                android:textColor="@color/colorRed"
-                android:textSize="20sp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:text="CÂY PHONG LAN"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size_detail_product"
                 android:textStyle="bold" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VND "
-                android:textColor="@color/colorRed"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gía:"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_size_detail_product"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_product_old_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:text="500.000" />
+
+
+                <TextView
+                    android:id="@+id/detail_product_current_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:text="500.000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mô tả:"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_size_detail_product"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_product_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingLeft="@dimen/margin_left_detail_product"
+                    android:text="- Công dụng 1
+- Mô tả 1
+- Công dụng 2" />
+            </LinearLayout>
+
         </LinearLayout>
 
+
+        <!--********-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_left_detail_product"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:text="CÂY PHONG LAN"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size_detail_product"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_product_description_benefits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+
+                android:text="Đcmm, cả 1 cái bài viết thật dài, dài vl, vl............................................................................................... dài dài daifi.......................................................................................................................................... khiếp, dài vl dài"
+                android:textSize="@dimen/text_size_detail_product" />
+        </LinearLayout>
+
+
+        <!-- Footer add to cart -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_left_detail_product"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/margin_left_detail_product">
+
+            <Button
+                android:id="@+id/detail_product_button_add_to_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@color/colorRed"
+                android:paddingBottom="10dp"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:paddingTop="10dp"
+                android:text="ADD TO CART"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/detail_product_price_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="500.000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VND "
+                    android:textColor="@color/colorRed"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
     </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
