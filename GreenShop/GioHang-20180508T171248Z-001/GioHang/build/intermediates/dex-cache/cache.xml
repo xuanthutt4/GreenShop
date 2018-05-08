@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\IT\.android\build-cache\819c7f8c36843a0753f0e27d130c386a65023a54\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="F:\GioHang\app\build\intermediates\pre-dexed\debug\classes_ab14f362bb9e6a28a50bf16bbd7eeaf61f99065f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\IT\.android\build-cache\45ffc5134b2e7b1e7db08a47216f49114c956c66\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="F:\GioHang\app\build\intermediates\pre-dexed\debug\classes_a59c466dae62edfa6db56b7df1880d706ff0e386.jar" />
+    </item>
+
+</items>

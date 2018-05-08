@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\GioHang\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "F:\\GioHang\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\GioHang\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "F:\\GioHang\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    }
+]
