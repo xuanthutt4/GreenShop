@@ -4,19 +4,19 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import java.util.ArrayList;
-
 import com.greenshop.greenshop.AdapterCustom.SlideAdapter;
 import com.greenshop.greenshop.R;
+
+import java.util.ArrayList;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -69,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
     void setUpIndicator(int size) {
         for (int i = 0; i < size; i++) {
             ImageView img = new ImageView(this);
-            img.setBackgroundResource(R.drawable.ic_circle);
+            img.setImageResource(R.drawable.ic_circle);
             img.setPadding(20, 20, 20, 20);
             if (i == 0)
                 img.setBackgroundTintList(ColorStateList.valueOf(R.color.colorText));

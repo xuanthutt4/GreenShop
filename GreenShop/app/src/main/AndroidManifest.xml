@@ -13,28 +13,22 @@
             android:name=".ViewControllers.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-<<<<<<< HEAD
-
-        </activity>
-        <activity android:name=".ViewControllers.SplashActivity">
-=======
->>>>>>> 76220354fc8fa5779763dd1c43d143448edd9a96
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".ViewControllers.DetailProductActivity">
+        <activity android:name=".ViewControllers.SplashActivity">
+
 
         </activity>
-=======
-        <activity android:name=".ViewControllers.SplashActivity"></activity>
-        <activity android:name=".ViewControllers.DetailProductActivity"></activity>
-        <activity android:name=".ViewControllers.ProductByCategoryActivity"></activity>
-        <activity android:name=".ViewControllers.ListCategoryActivity"></activity>
->>>>>>> 76220354fc8fa5779763dd1c43d143448edd9a96
+
+        <activity android:name=".ViewControllers.DetailProductActivity"/>
+
+        <activity android:name=".ViewControllers.ProductByCategoryActivity"/>
+        <activity android:name=".ViewControllers.ListCategoryActivity"/>
+        <activity android:name=".ViewControllers.CartActivity"/>
     </application>
 
 </manifest>

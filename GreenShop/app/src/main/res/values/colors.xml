@@ -8,10 +8,10 @@
     <color name="colorWhite">#ffff</color>
     <color name="colorRed">#cc1818</color>
     <color name="colorBlack">#000</color>
-<<<<<<< HEAD
+
     <color name="colorTransparentWhite">#cccccc</color>
     <color name="colorText">#ABA9B2</color>
-=======
+
 	<color name="colorBlue">#1ba8ff</color>
     <color name="nau">#1111</color>
     <color name="red">#ff041d</color>
@@ -19,5 +19,4 @@
     <color name="black">#212121</color>
     <color name="blackgr">#cac9c9</color>
 
->>>>>>> 76220354fc8fa5779763dd1c43d143448edd9a96
 </resources>

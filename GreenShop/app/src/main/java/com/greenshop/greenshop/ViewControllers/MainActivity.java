@@ -1,5 +1,6 @@
 package com.greenshop.greenshop.ViewControllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView, recyclerViewchau, recycleCategory;
     private int position = 0;
     private MySearch mySearch;
+    private String[] banner = new String[] {"banner"};
 
     private void scrollByTime(){
         final Handler handler= new Handler();
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity
         CustomLinearLayout customLinearLayout= new CustomLinearLayout(this);
         customLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(customLinearLayout);
-        MyRecycleAdapter adapte= new MyRecycleAdapter(data, this);
+        MyRecycleAdapter adapte= new MyRecycleAdapter(banner, this);
         recyclerView.setAdapter(adapte);
         scrollByTime();
 
@@ -185,7 +187,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_cart) {
+            Intent intent = new Intent(this, CartActivity.class);
+            startActivity(intent);
             return true;
         }
 

@@ -21,15 +21,9 @@ public class DetailProductActivity extends AppCompatActivity {
     private Button btnAddToCart;
     private TextView txtPriceBottom, txtOldPrice, txtCurrentPrice, txtName, txtDescription,
             txtDescriptionBenefits;
-<<<<<<< HEAD
 
-    public DetailProductActivity(Product product) {
-        this.product = product;
-    }
-
-=======
     private Intent intent;
->>>>>>> 76220354fc8fa5779763dd1c43d143448edd9a96
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

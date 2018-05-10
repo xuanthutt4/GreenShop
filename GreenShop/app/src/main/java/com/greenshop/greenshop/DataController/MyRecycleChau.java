@@ -60,7 +60,7 @@ public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHol
         Drawable drawable= holder.imageView.getResources().getDrawable(img);
         holder.textView.setText(aCard.getName());
         holder.imageView.setImageDrawable(drawable);
-        holder.gia.setText(String.valueOf(aCard.getPrice()));
+        holder.gia.setText(aCard.getStringPrice());
     }
 
     @Override

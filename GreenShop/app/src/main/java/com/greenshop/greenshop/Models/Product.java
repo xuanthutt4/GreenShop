@@ -1,6 +1,7 @@
 package com.greenshop.greenshop.Models;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class Product implements Serializable{
     private String id, name, description, descriptionBenefits;
@@ -65,6 +66,12 @@ public class Product implements Serializable{
 
     public float getPrice() {
         return price;
+    }
+
+    public String getStringPrice() {
+        DecimalFormat format = new DecimalFormat("#,###,###");
+
+        return format.format(price)  + " đ";
     }
 
     public void setPrice(float price) {
