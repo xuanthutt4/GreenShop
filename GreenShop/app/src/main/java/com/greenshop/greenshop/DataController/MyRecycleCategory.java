@@ -64,7 +64,7 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
         final String[] catName = new String[1];
         //Lấy 4 sản phẩm trong cùng 1 loại
         for (Product modelchau : data) {
-            if (modelchau.getIdCategory() == position + 1) {
+            if (modelchau.getIdCategory() == categories.get(position).getId()) {
                 for (Category category:categories) {//Lấy tên loại
                     if (modelchau.getIdCategory() == category.getId())
                         catName[0] = category.getName();
@@ -87,7 +87,7 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("data", data);
                 bundle.putString("nameCat", catName[0]);
-                bundle.putInt("idCat", position + 1);
+                bundle.putString("idCat", categories.get(position).getId());
                 intent.putExtra("bundle", bundle);
                 context.startActivity(intent);
             }

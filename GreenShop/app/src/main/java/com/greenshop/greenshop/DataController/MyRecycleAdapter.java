@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class MyRecycleAdapter extends RecyclerView.Adapter <MyRecycleAdapter.myV
         private ImageView imageView;
         public myViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.carTextView);
+
             imageView =(ImageView) itemView.findViewById(R.id.imageView);
         }
     }
@@ -48,7 +47,6 @@ public class MyRecycleAdapter extends RecyclerView.Adapter <MyRecycleAdapter.myV
     public void onBindViewHolder(MyRecycleAdapter.myViewHolder holder, int position) {
 
         int img = c.getResources().getIdentifier(data[position], "drawable", c.getPackageName());
-        Log.d("testImg", data[0]);
         Drawable drawable = holder.imageView.getResources().getDrawable(img);
         holder.imageView.setImageDrawable(drawable);
     }

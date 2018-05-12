@@ -23,12 +23,6 @@
             android:src="@drawable/ic_launcher_background">
 
         </ImageView>
-        <TextView
-            android:id="@+id/carTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="pi"/>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

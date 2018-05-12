@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
  * Created by IT on 3/19/2018.
  */
 
-public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHolder>{
+public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHolder>        {
     private ArrayList<Product> data;
     private AppCompatActivity context;
 
@@ -55,8 +56,11 @@ public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHol
 
     @Override
     public void onBindViewHolder(MyRecycleChau.myViewHolder holder, int position) {
+        //Log.d("testSize", data.size()+" ");
         Product aCard= data.get(position);
         int img = context.getResources().getIdentifier(aCard.getImages()[0], "drawable", context.getPackageName());
+        Log.d("TestIMG", aCard.getImages()[0] + aCard.getName());
+
         Drawable drawable= holder.imageView.getResources().getDrawable(img);
         holder.textView.setText(aCard.getName());
         holder.imageView.setImageDrawable(drawable);
@@ -65,6 +69,6 @@ public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHol
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return 4;
     }
 }

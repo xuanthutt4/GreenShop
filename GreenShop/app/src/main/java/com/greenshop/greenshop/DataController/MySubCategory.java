@@ -1,7 +1,6 @@
 package com.greenshop.greenshop.DataController;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -75,8 +74,8 @@ public class MySubCategory extends ArrayAdapter<Product>{
         viewHolder.name.setText(product.getName());
         viewHolder.price.setText(product.getStringPrice());
         int img = context.getResources().getIdentifier(product.getImages()[0], "drawable", context.getPackageName());
-        Drawable drawable = viewHolder.img.getResources().getDrawable(img);
-        viewHolder.img.setImageDrawable(drawable);
+        //Drawable drawable = viewHolder.img.getResources().getDrawable(img);
+        //viewHolder.img.setImageDrawable(drawable);
 
         viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override

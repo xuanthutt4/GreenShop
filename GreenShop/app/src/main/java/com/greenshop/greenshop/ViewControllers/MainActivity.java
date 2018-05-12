@@ -14,14 +14,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.greenshop.greenshop.DataController.CustomLinearLayout;
 import com.greenshop.greenshop.DataController.DataController;
+import com.greenshop.greenshop.DataController.MyCallBack;
 import com.greenshop.greenshop.DataController.MyRecycleAdapter;
 import com.greenshop.greenshop.DataController.MyRecycleCategory;
 import com.greenshop.greenshop.DataController.MyRecycleChau;
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         //FrameLayout container = (FrameLayout) findViewById(R.id.frame_container);
         //getLayoutInflater().inflate(R.layout.content_main, container);
@@ -79,7 +83,31 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //banner
-        data = controller.getAllProducts();
+        controller.getAllProducts(new MyCallBack() {
+            @Override
+            public void onCallback(ArrayList<Product> value) {
+                data = value;
+                //random
+                CustomLinearLayout customLinearLayoutchau= new CustomLinearLayout(MainActivity.this);
+                customLinearLayoutchau.setOrientation(LinearLayoutManager.HORIZONTAL);
+                recyclerViewchau.setLayoutManager(customLinearLayoutchau);
+                MyRecycleChau adapterchau= new MyRecycleChau(data, MainActivity.this);
+                recyclerViewchau.setAdapter(adapterchau);
+                //category
+                LinearLayoutManager manager = new LinearLayoutManager(MainActivity.this) {
+                    @Override
+                    public boolean canScrollVertically() {
+                        return false;
+                    }
+                };
+                manager.setOrientation(LinearLayoutManager.VERTICAL);
+                recycleCategory.setLayoutManager(manager);
+                MyRecycleCategory myRecycleCategory = new MyRecycleCategory(MainActivity.this, data, categories);
+                recycleCategory.setAdapter(myRecycleCategory);
+            }
+        });
+
+        Log.d("testSizeMain2", data.size()+" ");
         categories = controller.getAllCategory();
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
 
@@ -93,22 +121,6 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setAdapter(adapte);
         scrollByTime();
 
-        CustomLinearLayout customLinearLayoutchau= new CustomLinearLayout(this);
-        customLinearLayoutchau.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerViewchau.setLayoutManager(customLinearLayoutchau);
-        MyRecycleChau adapterchau= new MyRecycleChau(data, this);
-        recyclerViewchau.setAdapter(adapterchau);
-
-        LinearLayoutManager manager = new LinearLayoutManager(this) {
-            @Override
-            public boolean canScrollVertically() {
-                return false;
-            }
-        };
-        manager.setOrientation(LinearLayoutManager.VERTICAL);
-        recycleCategory.setLayoutManager(manager);
-        MyRecycleCategory myRecycleCategory = new MyRecycleCategory(this, data, categories);
-        recycleCategory.setAdapter(myRecycleCategory);
     }
 
     @Override

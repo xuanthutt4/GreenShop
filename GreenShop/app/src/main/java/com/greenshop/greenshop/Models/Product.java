@@ -4,20 +4,21 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 
 public class Product implements Serializable{
-    private String id, name, description, descriptionBenefits;
-    private int idCategory;
+    private String id, name, description, descriptionBenefits, idCategory;
     private float price, oldPrice;
     private String images[];
+    private int sale;
 
-    public Product(String id, String name, String description, String descriptionBenefits, int
-            idCategory, float price, float oldPrice, String[] images) {
+    public Product(String id, String name, String description, String descriptionBenefits, String
+            idCategory, int sale, float oldPrice, String[] images) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.descriptionBenefits = descriptionBenefits;
         this.idCategory = idCategory;
-        this.price = price;
         this.oldPrice = oldPrice;
+        this.sale = sale;
+        this.price = this.oldPrice - (this.oldPrice * this.sale / 100);
         this.images = images;
     }
 
@@ -56,11 +57,11 @@ public class Product implements Serializable{
         this.descriptionBenefits = descriptionBenefits;
     }
 
-    public int getIdCategory() {
+    public String getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(int idCategory) {
+    public void setIdCategory(String idCategory) {
         this.idCategory = idCategory;
     }
 
@@ -97,5 +98,13 @@ public class Product implements Serializable{
     @Override
     public String toString() {
         return name;
+    }
+
+    public int getSale() {
+        return sale;
+    }
+
+    public void setSale(int sale) {
+        this.sale = sale;
     }
 }

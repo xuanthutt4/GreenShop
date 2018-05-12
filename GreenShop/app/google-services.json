@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "882121966929",
+    "firebase_url": "https://greenshop-a5771.firebaseio.com",
+    "project_id": "greenshop-a5771",
+    "storage_bucket": "greenshop-a5771.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882121966929:android:738ad7b7f8f82c79",
+        "android_client_info": {
+          "package_name": "com.greenshop.greenshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882121966929-vqnujmnfgac25egdep8ek76si2is9vi9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greenshop.greenshop",
+            "certificate_hash": "e8dd4728583d6f434cc89b4c5da638970c313b74"
+          }
+        },
+        {
+          "client_id": "882121966929-fp7f6hr3le9fgvkd3f0fdb9b2fdjnvjq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greenshop.greenshop",
+            "certificate_hash": "eeef46f9fba6358dd5e08faad09ca0c5a158aa03"
+          }
+        },
+        {
+          "client_id": "882121966929-n9jvciivrnukft7bsv9fo9ci4l2d9kcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQoaE8vx6yKMthdvon1Dkqhh5TNgLarxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882121966929-n9jvciivrnukft7bsv9fo9ci4l2d9kcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

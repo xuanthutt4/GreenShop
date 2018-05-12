@@ -32,7 +32,7 @@ public class ProductByCategoryActivity extends AppCompatActivity{
         if (intent.getBundleExtra("bundle") != null) {
             Bundle bundle = intent.getBundleExtra("bundle");
             String nameCat = (String) bundle.getString("nameCat");
-            int idCat = (int) bundle.getInt("idCat");
+            String idCat = bundle.getString("idCat");
             lstName.setText(nameCat);
             products = (ArrayList<Product>) bundle.getSerializable("data");
 

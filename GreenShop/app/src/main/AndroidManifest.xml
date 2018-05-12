@@ -18,6 +18,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".ViewControllers.SplashActivity">
 
@@ -29,6 +30,8 @@
         <activity android:name=".ViewControllers.ProductByCategoryActivity"/>
         <activity android:name=".ViewControllers.ListCategoryActivity"/>
         <activity android:name=".ViewControllers.CartActivity"/>
-    </application>
 
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>
