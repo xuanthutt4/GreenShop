@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:nestedScrollingEnabled="true"
+    android:weightSum="20"
     tools:context=".ViewControllers.CartActivity">
     <FrameLayout
+        android:id="@+id/frmHeader"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-        android:background="@color/colorBlue">
+        android:background="@color/colorBlue"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/detail_product_button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_margin="@dimen/margin_left_detail_product"
+            android:layout_marginLeft="@dimen/margin_left_detail_product"
             app:srcCompat="@drawable/ic_return"
             android:tint="@color/colorWhite" />
 
         <TextView
+            android:id="@+id/cart_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Giỏ hàng(2)"
@@ -32,9 +37,11 @@
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/cart_body"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frmHeader"
+        android:layout_above="@id/cart_hip"
         android:orientation="vertical">
 
         <ListView
@@ -48,10 +55,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/cart_hip"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cart_footer"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="0dp"
@@ -68,17 +77,19 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/cart_footer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thanh toán"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorBlue"
             android:textColor="#fff"
             android:padding="20dp"/>
-    </LinearLayout>
-</LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

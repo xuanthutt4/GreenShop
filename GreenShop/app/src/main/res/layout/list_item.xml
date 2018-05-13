@@ -27,6 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/pro_pic"
+            android:layout_toLeftOf="@+id/pro_price"
+            android:layout_marginRight="5dp"
             android:text="txt"
             android:textSize="20sp" />
 
@@ -36,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/pro_name"
             android:layout_below="@id/pro_name"
-            android:text="txt"
+            android:text=""
             android:textSize="16sp" />
 
         <TextView

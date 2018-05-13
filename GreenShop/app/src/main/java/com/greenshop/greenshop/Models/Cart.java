@@ -5,20 +5,29 @@ package com.greenshop.greenshop.Models;
  */
 
 public class Cart {
-    private int img, price;
-    private String name;
+    private int price, qty;
+    private String name, img;
 
-    public Cart(int img, int price, String name, int qty) {
+    public Cart(String img, int price, String name, int qty) {
         this.img = img;
         this.price = price;
         this.name = name;
+        this.qty = qty;
     }
 
-    public int getImg() {
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
 

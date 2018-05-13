@@ -11,11 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
@@ -90,24 +87,9 @@ public class DetailProductActivity extends AppCompatActivity {
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Cart");
                 final String idDevice = FirebaseInstanceId.getInstance().getToken();
                 Log.d("TestToken", idDevice);
-                mDatabase.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild(idDevice))
-                            mDatabase.child(idDevice).push().setValue(product.getId());
-                        else {
-                            mDatabase.setValue(idDevice);
-                            mDatabase.child(idDevice).push().setValue(product.getId());
-                        }
-                    }
+                mDatabase.child(idDevice).child(product.getId()).setValue(product.getIdCategory());
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-                Toast.makeText(DetailProductActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailProductActivity.this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
             }
         });
 

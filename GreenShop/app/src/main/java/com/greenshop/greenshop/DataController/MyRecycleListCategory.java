@@ -46,7 +46,7 @@ public class MyRecycleListCategory extends RecyclerView.Adapter <MyRecycleListCa
 
     @Override
     public int getItemCount() {
-        return categories.size();
+        return 1;
     }
 
 }

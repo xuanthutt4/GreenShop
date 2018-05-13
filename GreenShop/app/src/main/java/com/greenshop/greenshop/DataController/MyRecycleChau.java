@@ -69,6 +69,6 @@ public class MyRecycleChau extends RecyclerView.Adapter <MyRecycleChau.myViewHol
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

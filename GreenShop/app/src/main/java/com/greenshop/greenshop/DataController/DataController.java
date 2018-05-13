@@ -7,10 +7,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.greenshop.greenshop.Models.Cart;
 import com.greenshop.greenshop.Models.Category;
 import com.greenshop.greenshop.Models.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataController {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -104,5 +107,47 @@ public class DataController {
          */
 
         return products;
+    }
+
+    public void getCart(final MyCallBack myCallBack) {
+        final ArrayList<Cart> carts = new ArrayList<>();
+        final List<String> idProduct = new ArrayList<>();
+        final DatabaseReference myRefCart = database.getReference();
+        String token = FirebaseInstanceId.getInstance().getToken();
+        myRefCart.child("Cart").child(token).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dps: dataSnapshot.getChildren()) {
+                    idProduct.add(dps.getKey());
+                    Log.d("TestID", idProduct.get(idProduct.size() - 1));
+                    myRefCart.child("Public-products").child(dps.getValue(String.class)).child("products").child(dps.getKey()).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            String name = dataSnapshot.child("name").getValue(String.class);
+                            Integer price = dataSnapshot.child("price").getValue(int.class);
+                            Integer sale = dataSnapshot.child("sale").getValue(int.class);
+                            String[] image = new String[6];
+                            int i = 0;
+                            for (DataSnapshot dspImg: dataSnapshot.child("images").getChildren()) {
+                                image[i++] = dspImg.getValue(String.class);
+                            }
+                            carts.add(new Cart(image[0], price - (price * sale / 100), name, 1));
+                            myCallBack.onCallbackCart(carts);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                    myCallBack.onCallbackCart(carts);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

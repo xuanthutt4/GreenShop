@@ -14,7 +14,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +28,7 @@ import com.greenshop.greenshop.DataController.MyRecycleAdapter;
 import com.greenshop.greenshop.DataController.MyRecycleCategory;
 import com.greenshop.greenshop.DataController.MyRecycleChau;
 import com.greenshop.greenshop.DataController.MySearch;
+import com.greenshop.greenshop.Models.Cart;
 import com.greenshop.greenshop.Models.Category;
 import com.greenshop.greenshop.Models.Product;
 import com.greenshop.greenshop.R;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //banner
+
         controller.getAllProducts(new MyCallBack() {
             @Override
             public void onCallback(ArrayList<Product> value) {
@@ -105,9 +105,13 @@ public class MainActivity extends AppCompatActivity
                 MyRecycleCategory myRecycleCategory = new MyRecycleCategory(MainActivity.this, data, categories);
                 recycleCategory.setAdapter(myRecycleCategory);
             }
-        });
 
-        Log.d("testSizeMain2", data.size()+" ");
+            @Override
+            public void onCallbackCart(ArrayList<Cart> carts) {
+
+            }
+        });
+        //banner
         categories = controller.getAllCategory();
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
 
@@ -172,7 +176,7 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (newText.length() > 2) {
+                if (newText.length() > 2) {//Nhập hơn 2 ký tự sẽ bắt đầu tìm kiếm
                     ArrayList<Product> temp = new ArrayList<>();
                     for (Product product:data) {
                         if (product.getName().toLowerCase().contains(newText.toLowerCase()))

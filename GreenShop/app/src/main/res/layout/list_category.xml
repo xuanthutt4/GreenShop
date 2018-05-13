@@ -41,7 +41,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="3dp">
+                    android:padding="3dp"
+                    android:paddingRight="1dp">
 
                 </ListView>
                 <ListView
@@ -49,7 +50,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="3dp">
+                    android:padding="3dp"
+                    android:paddingLeft="1dp">
 
                 </ListView>
             </LinearLayout>
