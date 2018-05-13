@@ -1,6 +1,7 @@
 package com.greenshop.greenshop.DataController;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -49,7 +50,7 @@ public class MySubCategory extends ArrayAdapter<Product>{
     }
 
     private static class ViewHolder {
-        TextView name, price;
+        TextView name, price, sale, oldPrice;
         ImageView img;
     }
 
@@ -65,6 +66,8 @@ public class MySubCategory extends ArrayAdapter<Product>{
             viewHolder.name = (TextView) convertView.findViewById(R.id.txtTen);
             viewHolder.price = (TextView) convertView.findViewById(R.id.txtGia);
             viewHolder.img = (ImageView) convertView.findViewById(R.id.imgcdb);
+            viewHolder.sale = convertView.findViewById(R.id.txtSale);
+            viewHolder.oldPrice= convertView.findViewById(R.id.txtOldPrice);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -74,6 +77,11 @@ public class MySubCategory extends ArrayAdapter<Product>{
 
         viewHolder.name.setText(product.getName());
         viewHolder.price.setText(product.getStringPrice());
+        if (product.getSale() > 0) {
+            viewHolder.oldPrice.setText(product.getStringOldPrice());
+            viewHolder.oldPrice.setPaintFlags(viewHolder.oldPrice.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+            viewHolder.sale.setText(String.valueOf("-"+product.getSale()+"%"));
+        }
         int img = context.getResources().getIdentifier(product.getImages()[0], "drawable", context.getPackageName());
         Drawable drawable = viewHolder.img.getResources().getDrawable(img);
         viewHolder.img.setImageDrawable(drawable);

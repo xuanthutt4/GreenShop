@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center_vertical"
+        android:gravity="center_horizontal"
         android:background="@color/colorBlue">
-        <Button
+        <ImageView
             android:id="@+id/btn_return"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:padding="0dp"
-            android:background="@drawable/ic_return"
-            android:backgroundTint="@color/colorWhite"/>
+            app:srcCompat="@drawable/ic_return"
+            android:tint="@color/colorWhite"/>
         <TextView
             android:id="@+id/lst_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/colorWhite"/>
-    </LinearLayout>
+    </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lst_pro_cat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="14"/>
+        android:layout_weight="14" />
 </LinearLayout>

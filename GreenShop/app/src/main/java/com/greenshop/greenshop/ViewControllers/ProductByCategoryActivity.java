@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.greenshop.greenshop.DataController.MyRecycleProByCat;
@@ -23,22 +24,23 @@ public class ProductByCategoryActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_by_category);
 
-
         intent = this.getIntent();
 
         TextView lstName = (TextView) findViewById(R.id.lst_name);
         RecyclerView lst = (RecyclerView) findViewById(R.id.lst_pro_cat);
-        Button btnReturn = (Button) findViewById(R.id.btn_return);
+        ImageView btnReturn = (ImageView) findViewById(R.id.btn_return);
         if (intent.getBundleExtra("bundle") != null) {
             Bundle bundle = intent.getBundleExtra("bundle");
             String nameCat = (String) bundle.getString("nameCat");
             String idCat = bundle.getString("idCat");
+            Log.d("idCat", idCat);
             lstName.setText(nameCat);
             products = (ArrayList<Product>) bundle.getSerializable("data");
 
             ArrayList<Product> data = new ArrayList<>();
             for (Product product:products) {
-                if (product.getIdCategory() == idCat)
+                Log.d("idPro", product.getIdCategory());
+                if (product.getIdCategory().equals(idCat))
                     data.add(product);
             }
 

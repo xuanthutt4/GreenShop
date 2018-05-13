@@ -72,7 +72,7 @@ public class MyRecycleProByCat extends RecyclerView.Adapter <MyRecycleProByCat.m
         Drawable drawable = holder.img.getResources().getDrawable(idImg);
         holder.img.setImageDrawable(drawable);
         holder.txtName.setText(product.getName());
-        holder.txtPrice.setText(String.valueOf(product.getPrice()));
+        holder.txtPrice.setText(product.getStringPrice());
         holder.txtStatus.setText("Còn hàng");
     }
 

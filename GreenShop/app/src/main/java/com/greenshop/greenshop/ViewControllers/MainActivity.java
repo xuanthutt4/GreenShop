@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView, recyclerViewchau, recycleCategory;
     private int position = 0;
     private MySearch mySearch;
-    private String[] banner = new String[] {"banner"};
+    private String[] banner = new String[] {"banner", "banner2", "banner3", "banner4"};
 
     private void scrollByTime(){
         final Handler handler= new Handler();
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run() {
                 position++;
-                if (position >=data.size()){
+                if (position >= banner.length){
                     position=0;
                 }
                 recyclerView.smoothScrollToPosition(position);
-                handler.postDelayed(this,3000);
+                handler.postDelayed(this,4000);
 
             }
         });

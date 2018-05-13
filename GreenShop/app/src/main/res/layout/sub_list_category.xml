@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="260dp"
-    android:background="@color/blackgr"
     android:gravity="center">
 
     <ImageView
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:id="@+id/imgcdb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_launcher_background" />
 
@@ -18,17 +19,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/colorBlue"
-        android:textSize="24dp"
-        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_below="@id/imgcdb"
+        android:layout_marginTop="8dp"
         android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp">
+        <TextView
+            android:id="@+id/txtGia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="TextView"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/txtOldPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/app_name"/>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/txtGia"
-        android:layout_width="match_parent"
+        android:id="@+id/txtSale"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:gravity="center"/>
+        android:layout_alignParentTop="true"
+        android:text="-10%"
+        android:background="@color/colorRed"
+        android:textColor="@color/colorWhite"
+        android:padding="10dp"/>
 
-</LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.greenshop.greenshop.ViewControllers;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class DetailProductActivity extends AppCompatActivity {
     private ImageView imgBack, imgShare, imgAddCart, imgProduct;
     private Button btnAddToCart;
     private TextView txtPriceBottom, txtOldPrice, txtCurrentPrice, txtName, txtDescription,
-            txtDescriptionBenefits;
+            txtDescriptionBenefits, txtSale;
     private DatabaseReference mDatabase;
     private Intent intent;
 
@@ -42,17 +43,12 @@ public class DetailProductActivity extends AppCompatActivity {
             Log.e("ERROR", e.getMessage());
         }
 
-        if (getIntent() != null) {
-        }
-
-
     }
 
     void setUpFindView() {
         imgBack = findViewById(R.id.detail_product_button_back);
         imgAddCart = findViewById(R.id.detail_product_button_cart);
         imgProduct = findViewById(R.id.detail_product_images_product);
-        imgShare = findViewById(R.id.detail_product_button_share);
 
         //Set event
         imgBack.setOnClickListener(new View.OnClickListener() {
@@ -65,17 +61,13 @@ public class DetailProductActivity extends AppCompatActivity {
             }
         });
 
-        imgShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(DetailProductActivity.this, "Shared", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         imgAddCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DetailProductActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DetailProductActivity.this, CartActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 
@@ -99,16 +91,20 @@ public class DetailProductActivity extends AppCompatActivity {
         txtName = findViewById(R.id.detail_product_text_view_name_product);
         txtDescription = findViewById(R.id.detail_product_description);
         txtDescriptionBenefits = findViewById(R.id.detail_product_description_benefits);
-
+        txtSale = findViewById(R.id.detail_product_sale);
 
     }
 
     void disPlayProduct(Product product) {
         txtName.setText(product.getName());
-        txtOldPrice.setText(Float.toString(product.getOldPrice()));
-        txtCurrentPrice.setText(Float.toString(product.getPrice()));
+        txtOldPrice.setText(product.getStringOldPrice());
+        if (product.getSale() > 0) {
+            txtOldPrice.setPaintFlags(txtOldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            txtCurrentPrice.setText(product.getStringPrice());
+            txtSale.setText(String.valueOf("-" + product.getSale() + "%"));
+        }
         txtDescriptionBenefits.setText(product.getDescriptionBenefits());
-        txtPriceBottom.setText(Float.toString(product.getPrice()));
+        txtPriceBottom.setText(product.getStringPrice());
         txtDescription.setText(product.getDescription());
         int img = getResources().getIdentifier(product.getImages()[0], "drawable", getPackageName());
         Drawable drawable = imgProduct.getResources().getDrawable(img);

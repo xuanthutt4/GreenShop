@@ -8,6 +8,7 @@ public class Product implements Serializable{
     private float price, oldPrice;
     private String images[];
     private int sale;
+    private DecimalFormat format = new DecimalFormat("#,###,###");
 
     public Product(String id, String name, String description, String descriptionBenefits, String
             idCategory, int sale, float oldPrice, String[] images) {
@@ -70,8 +71,6 @@ public class Product implements Serializable{
     }
 
     public String getStringPrice() {
-        DecimalFormat format = new DecimalFormat("#,###,###");
-
         return format.format(price)  + " đ";
     }
 
@@ -81,6 +80,10 @@ public class Product implements Serializable{
 
     public float getOldPrice() {
         return oldPrice;
+    }
+
+    public String getStringOldPrice() {
+        return format.format(oldPrice) + " đ";
     }
 
     public void setOldPrice(float oldPrice) {
