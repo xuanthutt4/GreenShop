@@ -117,12 +117,13 @@ public class DataController {
         myRefCart.child("Cart").child(token).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot dps: dataSnapshot.getChildren()) {
+                for (final DataSnapshot dps: dataSnapshot.getChildren()) {
                     idProduct.add(dps.getKey());
                     Log.d("TestID", idProduct.get(idProduct.size() - 1));
                     myRefCart.child("Public-products").child(dps.getValue(String.class)).child("products").child(dps.getKey()).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            String id = dps.getKey();
                             String name = dataSnapshot.child("name").getValue(String.class);
                             Integer price = dataSnapshot.child("price").getValue(int.class);
                             Integer sale = dataSnapshot.child("sale").getValue(int.class);
@@ -131,7 +132,7 @@ public class DataController {
                             for (DataSnapshot dspImg: dataSnapshot.child("images").getChildren()) {
                                 image[i++] = dspImg.getValue(String.class);
                             }
-                            carts.add(new Cart(image[0], price - (price * sale / 100), name, 1));
+                            carts.add(new Cart(id, image[0], price - (price * sale / 100), name, 1));
                             myCallBack.onCallbackCart(carts);
                         }
 

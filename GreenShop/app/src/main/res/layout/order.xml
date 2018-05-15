@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/order_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorBlue"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/order_button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/margin_left_detail_product"
+            app:srcCompat="@drawable/ic_return"
+            android:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/order_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thông tin đặt hàng"
+            android:textSize="24sp"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_header"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/tvHoTen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ tên: "
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/edtHoTen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvHoTen"
+            android:layout_alignBaseline="@id/tvHoTen"/>
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            android:layout_below="@id/tvHoTen"
+            android:layout_alignLeft="@id/tvHoTen"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvHoTen"
+            android:layout_alignBaseline="@id/tvEmail"/>
+        <TextView
+            android:id="@+id/tvDienThoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điện thoại: "
+            android:textSize="20dp"
+            android:layout_below="@id/tvEmail"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edtDienThoai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvDienThoai"
+            android:layout_toRightOf="@id/tvDienThoai"
+            />
+        <TextView
+            android:id="@+id/tvDiaChi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDienThoai"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Địa chỉ: "/>
+        <EditText
+            android:id="@+id/edtDiaChi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvDiaChi"
+            android:layout_toRightOf="@id/tvDiaChi"/>
+        <TextView
+            android:id="@+id/tvGhiChu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDiaChi"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Ghi chú: "/>
+        <EditText
+            android:id="@+id/edtGhiChu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvGhiChu"
+            android:layout_toRightOf="@id/tvGhiChu"/>
+        <ListView
+            android:id="@+id/lst_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGhiChu"
+            android:layout_marginTop="10dp"
+            android:layout_above="@id/btnOrder"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlue"
+        android:text="Đặt hàng"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

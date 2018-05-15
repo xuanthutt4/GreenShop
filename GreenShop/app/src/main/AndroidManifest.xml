@@ -28,6 +28,7 @@
         <activity android:name=".ViewControllers.ProductByCategoryActivity"/>
         <activity android:name=".ViewControllers.ListCategoryActivity"/>
         <activity android:name=".ViewControllers.CartActivity"/>
+        <activity android:name=".ViewControllers.OrderActivity"/>
 
     </application>
 </manifest>

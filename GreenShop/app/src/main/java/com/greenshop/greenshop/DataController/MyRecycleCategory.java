@@ -96,6 +96,6 @@ public class MyRecycleCategory extends RecyclerView.Adapter <MyRecycleCategory.m
 
     @Override
     public int getItemCount() {
-        return 2;
+        return categories.size();
     }
 }
